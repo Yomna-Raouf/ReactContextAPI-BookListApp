@@ -1,0 +1,10 @@
+.navbar nav {
+  padding: 5px;
+}
+.navbar nav ul {
+  padding: 0;
+}
+.navbar nav ul li {
+  display: inline-block;
+  margin: 0 10px;
+}

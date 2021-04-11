@@ -1,0 +1,5 @@
+.BookDetails:hover {
+  opacity: 0.6;
+  text-decoration: line-through;
+  cursor: pointer;
+}

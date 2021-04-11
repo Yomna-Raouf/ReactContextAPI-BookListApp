@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { BookContext } from "../../context/BookContext";
 import { ThemeContext } from "../../context/ThemeContext";
+import { BookDetails } from "../BookDetails/BookDetails";
 import "./BookList.css";
 
 const BookList = () => {
@@ -15,19 +16,15 @@ const BookList = () => {
         background: theme.bg,
       }}
     >
-      <ul>
-        {books.map((book) => (
-          <li
-            style={{
-              background: theme.ui,
-              color: theme.syntax,
-            }}
-            key={book.id}
-          >
-            {book.title}
-          </li>
-        ))}
-      </ul>
+      {books.length ? (
+        <ul>
+          {books.map((book) => (
+            <BookDetails key={book.id} book={book} />
+          ))}
+        </ul>
+      ) : (
+        <h3>You have read them all</h3>
+      )}
     </div>
   );
 };

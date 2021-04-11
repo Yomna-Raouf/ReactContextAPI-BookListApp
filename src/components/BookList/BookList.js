@@ -6,7 +6,7 @@ import "./BookList.css";
 
 const BookList = () => {
   const { isLightTheme, light, dark } = useContext(ThemeContext);
-  const { books, addBook } = useContext(BookContext);
+  const { books } = useContext(BookContext);
   const theme = isLightTheme ? light : dark;
 
   return (
@@ -23,7 +23,7 @@ const BookList = () => {
           ))}
         </ul>
       ) : (
-        <h3>You have read them all</h3>
+        <h3>You have read them all :)</h3>
       )}
     </div>
   );

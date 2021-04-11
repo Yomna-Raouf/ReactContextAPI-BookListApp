@@ -1,0 +1,21 @@
+.AddBookForm form {
+  padding: 20px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 6px 0;
+  border: 0;
+  background: rgb(221, 221, 221);
+  color: rgb(85, 85, 85);
+}
+
+.AddBookForm form button {
+  margin: 10px auto;
+  border: 0;
+  padding: 6px 20px;
+  display: block;
+  color: rgb(85, 85, 85);
+}

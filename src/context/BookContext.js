@@ -1,10 +1,16 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 import { bookReducer } from "../reducer/bookReducer";
 
 export const BookContext = createContext();
 
 const BookContextProvider = ({ children }) => {
-  const [books, dispatch] = useReducer(bookReducer, []);
+  const [books, dispatch] = useReducer(bookReducer, [], () => {
+    const localData = localStorage.getItem("books");
+    return localData ? JSON.parse(localData) : [];
+  });
+  useEffect(() => {
+    localStorage.setItem("books", JSON.stringify(books));
+  }, [books]);
 
   /*  { title: "The clean coder", author: "Robert C.Martin", id: 1 },
     { title: "clean code", author: "Robert C.Martin", id: 2 },

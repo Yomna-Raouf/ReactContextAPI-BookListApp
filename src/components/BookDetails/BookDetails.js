@@ -4,7 +4,7 @@ import { ThemeContext } from "../../context/ThemeContext";
 import "./BookDetails.css";
 
 const BookDetails = ({ book }) => {
-  const { removeBook } = useContext(BookContext);
+  const { dispatch } = useContext(BookContext);
   const { isLightTheme, light, dark } = useContext(ThemeContext);
   const theme = isLightTheme ? light : dark;
   return (
@@ -14,7 +14,7 @@ const BookDetails = ({ book }) => {
         color: theme.syntax,
       }}
       className="BookDetails"
-      onClick={() => removeBook(book.id)}
+      onClick={() => dispatch({ type: "REMOVE_BOOK", id: book.id })}
     >
       <div>{book.title}</div>
       <br />

@@ -3,14 +3,14 @@ import { BookContext } from "../../context/BookContext";
 import "./AddBookForm.css";
 
 const AddBookForm = () => {
-  const { addBook } = useContext(BookContext);
+  const { dispatch } = useContext(BookContext);
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(title, author);
-    addBook({ title, author });
+    dispatch({ type: "ADD_BOOK", newBook: { title, author } });
     setAuthor("");
     setTitle("");
   };
